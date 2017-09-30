@@ -1,4 +1,7 @@
 # Source: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore (CC0 licensed)
+# local changes
+# emacs temp files
+*~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
