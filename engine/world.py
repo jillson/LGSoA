@@ -35,3 +35,6 @@ class World:
         
             
         
+if __name__ == "__main__":
+    w = World()
+    print w.getInitialData()

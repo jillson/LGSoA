@@ -5,8 +5,10 @@ import unittest
 
 from world import World
 from overworld import Overworld
-from town import Town
+from town import Town, TownFactory
 from player import Player
+
+from generators.namegen import NameGen
 
 class WorldTests(unittest.TestCase):
     def setUp(self):
@@ -36,4 +38,21 @@ class WorldTests(unittest.TestCase):
         w = World(width=2,height=2)
         data = w.getInitialData()
         self.assertTrue("towns" in data.keys())
+        
+
+class TestTownFactory(unittest.TestCase):
+    def setUp(self):
+        pass
+    def testBasic(self):
+        tf = TownFactory(NameGen())
+        tf.createTown()
+    def testDuplicateNames(self):
+        class BadNameGen:
+            def getName(self):
+                return "Bob"
+        tf = TownFactory(BadNameGen())
+        t1 = tf.createTown()
+        t2 = tf.createTown()
+        self.assertEqual(t1.name,"Bob")
+        self.assertEqual(t2.name,"New Bob")
         
