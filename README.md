@@ -14,4 +14,4 @@ Running dedicated server:
      (-l specifies localhost only; portnumber defaults to 8192)
 
 Testing:
-   tbd
+   python -m unittest discover   
