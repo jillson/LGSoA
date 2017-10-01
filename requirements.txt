@@ -1,1 +1,2 @@
 git+https://github.com/chr15m/PodSixNet.git#egg=PodSixNet
+mock==2.0.0

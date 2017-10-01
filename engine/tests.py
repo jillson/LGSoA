@@ -3,14 +3,37 @@
 import mock
 import unittest
 
-from world import World
-from overworld import Overworld
-from town import Town, TownFactory
-from player import Player
+from farm import Farm
 
-from generators.namegen import NameGen
 
-class WorldTests(unittest.TestCase):
+#from world import World
+#from overworld import Overworld
+#from town import Town, TownFactory
+#from player import Player
+
+#from generators.namegen import NameGen
+
+class FarmTests(unittest.TestCase):
+    def setUp(self):
+        pass
+    def testBasic(self):
+        f = Farm(width=80,height=80)
+        self.assertEqual(f.width,80)
+        self.assertEqual(f.height,80)
+    def testLimits(self):
+        f = Farm(width=1,height=1000000)
+        self.assertEqual(f.width,10)
+        self.assertEqual(f.height,256)
+    def testFarming(self):
+        f = Farm()
+        x,y = f.width-1,f.height-1
+        f.plant(x,y,"grass")
+        
+
+
+
+#class WorldTests(unittest.TestCase):
+class Skip1:
     def setUp(self):
         pass
 
@@ -40,7 +63,8 @@ class WorldTests(unittest.TestCase):
         self.assertTrue("towns" in data.keys())
         
 
-class TestTownFactory(unittest.TestCase):
+#class TestTownFactory(unittest.TestCase):
+class Skip2:
     def setUp(self):
         pass
     def testBasic(self):
